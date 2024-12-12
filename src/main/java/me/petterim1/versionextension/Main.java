@@ -12,7 +12,7 @@ public class Main extends PluginBase {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        List<Integer> versions = getConfig().getIntegerList("extraVersions");
+        List<Byte> versions = getConfig().getByteList("extraVersions");
         Class<?> c = ProtocolInfo.class;
         try {
             Field f1 = c.getDeclaredField("ENABLED_PROTOCOLS");
