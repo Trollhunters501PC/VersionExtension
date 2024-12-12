@@ -17,7 +17,7 @@ public class Main extends PluginBase {
         try {
             Field f1 = c.getDeclaredField("ENABLED_PROTOCOLS");
             f1.setAccessible(true);
-            int currentProtocol = f1.getInt(null);
+            int currentProtocol = f1.getByte(null);
             getLogger().debug("Current protocol: " + currentProtocol);
             versions.add(currentProtocol);
             getLogger().debug("Versions: " + versions.toString());
@@ -25,7 +25,7 @@ public class Main extends PluginBase {
             f2.setAccessible(true);
             Field m = Field.class.getDeclaredField("modifiers");
             m.setAccessible(true);
-            m.setInt(f2, f2.getModifiers() & ~Modifier.FINAL);
+            m.setByte(f2, f2.getModifiers() & ~Modifier.FINAL);
             f2.set(f2, versions);
             getLogger().debug("Set: " + f2.get(null).toString());
         } catch (NoSuchFieldException | IllegalAccessException e) {
