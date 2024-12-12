@@ -1,4 +1,4 @@
-name: VersionExtension
+name: VersionExtensionPM1E
 version: "${pom.version}"
 api: ["1.0.0"]
 author: PetteriM1
