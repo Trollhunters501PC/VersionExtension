@@ -17,7 +17,7 @@ public class Main extends PluginBase {
         try {
             Field f1 = c.getDeclaredField("ENABLED_PROTOCOLS");
             f1.setAccessible(true);
-            int currentProtocol = f1.getByte(null);
+            byte currentProtocol = f1.getByte(null);
             getLogger().debug("Current protocol: " + currentProtocol);
             versions.add(currentProtocol);
             getLogger().debug("Versions: " + versions.toString());
