@@ -25,7 +25,7 @@ public class Main extends PluginBase {
             f2.setAccessible(true);
             Field m = Field.class.getDeclaredField("modifiers");
             m.setAccessible(true);
-            m.setByte(f2, f2.getModifiers() & ((byte) ~Modifier.FINAL));
+            m.setByte(f2, ((byte) f2.getModifiers() &  ~Modifier.FINAL));
             f2.set(f2, versions);
             getLogger().debug("Set: " + f2.get(null).toString());
         } catch (NoSuchFieldException | IllegalAccessException e) {
