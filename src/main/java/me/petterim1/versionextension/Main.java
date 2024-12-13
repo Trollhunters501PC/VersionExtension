@@ -6,6 +6,7 @@ import cn.nukkit.plugin.PluginBase;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.List;
+import java.util.HashSet;
 
 public class Main extends PluginBase {
 
@@ -23,7 +24,7 @@ public class Main extends PluginBase {
             Field m = Field.class.getDeclaredField("modifiers");
             m.setAccessible(true);
             m.setInt(f2, f2.getModifiers() &  ~Modifier.FINAL);
-            f2.set(f2, versions);
+            f2.set(f2, new HashSet<>(versions));
             getLogger().debug("Set: " + f2.get(null).toString());
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
