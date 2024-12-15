@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.petterim1.versionextension</groupId>
-    <artifactId>VersionExtension</artifactId>
-    <version>1.0</version>
+    <artifactId>VersionExtensionMOT</artifactId>
+    <version>1.0.1</version>
     <build>
         <defaultGoal>install</defaultGoal>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
@@ -32,19 +32,19 @@
             </resource>
         </resources>
     </build>
-    <repositories>
-         <repository>
-             <id>nukkitx</id>
-             <url>https://repo.nukkitx.com/main/</url>
-         </repository>
+     <repositories>
+       <repository>
+        <id>repo-lanink-cn</id>
+        <url>https://repo.lanink.cn/repository/maven-public/</url>
+       </repository>
      </repositories>
      <dependencies>
-         <dependency>
-             <groupId>cn.nukkit</groupId>
-             <artifactId>nukkit</artifactId>
-             <version>1.0-SNAPSHOT</version>
-             <scope>provided</scope>
-         </dependency>
+      <dependency>
+        <groupId>cn.nukkit</groupId>
+        <artifactId>Nukkit</artifactId>
+        <version>MOT-SNAPSHOT</version>
+        <scope>provided</scope>
+      </dependency>
      </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
