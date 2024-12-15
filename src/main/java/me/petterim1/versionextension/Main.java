@@ -15,11 +15,8 @@ public class Main extends PluginBase {
         List<Integer> versions = getConfig().getIntegerList("extraVersions");
         Class<?> c = ProtocolInfo.class;
         try {
-            Field f1 = c.getDeclaredField("CURRENT_PROTOCOL");
+            Field f1 = c.getDeclaredField("SUPPORTED_PROTOCOLS");
             f1.setAccessible(true);
-            int currentProtocol = f1.getInt(null);
-            getLogger().debug("Current protocol: " + currentProtocol);
-            versions.add(currentProtocol);
             getLogger().debug("Versions: " + versions.toString());
             Field f2 = c.getDeclaredField("SUPPORTED_PROTOCOLS");
             f2.setAccessible(true);
